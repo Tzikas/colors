@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import mix from 'mix-color';
- console.log(
-mix('#fff', '#000', '#fff', 0.5),
-mix('#ff0000', 'rgba(0,0,0,0.3)', 0.2),
-mix('#ff0000', '#ffffff88', 0.1),
- )
+
 class Image extends Component {
 
     state = {
@@ -51,8 +46,10 @@ class Image extends Component {
         let mixedColor = '#000'
         if(this.state.colors){
             this.state.colors.forEach(color => {
-                mixedColor = mix(mixedColor, color, .5)
-                console.log(mixedColor, color)
+                if(color){
+                    mixedColor = mix(mixedColor, color, .5)
+                    console.log(mixedColor, color)
+                }
             })
         }
         return (
