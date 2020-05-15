@@ -64,7 +64,6 @@ class Image extends Component {
 
                 <input type="color" onChange={this.selectColor} />
                 <button onClick={this.submitColor} >Submit Color</button>
-
                 {this.state.colors && this.state.submitted? 
                 
                 <div>
@@ -72,6 +71,7 @@ class Image extends Component {
                     {this.showColors()}
                 </div>
                 : ''}
+                <button onClick={()=>this.setState({submitted:!this.state.submitted})}>Show</button>
 
 
             </div>
