@@ -13,7 +13,7 @@ class Image extends Component {
     }
 
     async componentDidMount() {
-        let res = await Axios.get(`http://localhost:5000/getImage?imageId=${this.props.match.params.id}`)
+        let res = await Axios.get(`https://serene-dawn-41350.herokuapp.com/getImage?imageId=${this.props.match.params.id}`)
         console.log(res)
         this.setState(res.data)
 
@@ -35,7 +35,7 @@ class Image extends Component {
     }
 
     submitColor = (e) => {
-        Axios.post(`http://localhost:5000/addColor?imageId=${this.props.match.params.id}`, this.state)
+        Axios.post(`https://serene-dawn-41350.herokuapp.com/addColor?imageId=${this.props.match.params.id}`, this.state)
             .then(res => {
                 console.log(res)
                 let obj = res.data
@@ -72,6 +72,7 @@ class Image extends Component {
                     {this.showColors()}
                 </div>
                 : ''}
+                <button onClick={()=>this.setState({submitted:!this.state.submitted})}>Show</button>
 
 
             </div>

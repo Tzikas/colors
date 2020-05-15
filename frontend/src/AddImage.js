@@ -17,7 +17,7 @@ class AddImage extends Component {
 
     sendToServer = async (e) => {
         e.preventDefault()
-        let img = await Axios.post(`http://localhost:5000/add-image`, this.state)
+        let img = await Axios.post(`https://serene-dawn-41350.herokuapp.com/add-image`, this.state)
         console.log(img)
         this.props.history.push('/')
     }
@@ -33,7 +33,7 @@ class AddImage extends Component {
         
         
         //service.handleUpload(uploadData) to go to cloudinary and come back with image url
-        Axios.post(`http://localhost:5000/upload`, uploadData)
+        Axios.post(`https://serene-dawn-41350.herokuapp.com/upload`, uploadData)
         .then(response => {
             console.log('response is: ', response);
             // after the console.log we can see that response carries 'secure_url' which we can use to update the state 

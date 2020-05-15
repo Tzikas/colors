@@ -9,7 +9,7 @@ class Home extends Component {
 
 
     async componentDidMount(){
-        let response = await Axios.get(`http://localhost:5000`)
+        let response = await Axios.get(`https://serene-dawn-41350.herokuapp.com`)
         this.setState({
             images:response.data.images
         })
